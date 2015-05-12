@@ -29,6 +29,11 @@ exports.index=function(req, res){
 	res.render('quizes/index.ejs', { quizes: quizes});
 }).catch(function(error){next(error);});
 };
+exports.author=function(req, res){
+	
+	res.render('author.ejs', { creditos: "creditos de Marta y Luis"});
+
+};
 // exports.question=function(req, res){
 // 	models.Quiz.findAll().then(function(quiz){
 // 	res.render('quizes/question', {pregunta: quiz[0].pregunta});
