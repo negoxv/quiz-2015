@@ -32,7 +32,7 @@ exports.index=function(req, res){
 exports.author=function(req, res){
 	
 	res.render('author.ejs', { creditos: "creditos de Marta y Luis"});
-
+ 
 };
 // exports.question=function(req, res){
 // 	models.Quiz.findAll().then(function(quiz){
