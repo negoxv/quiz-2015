@@ -24,6 +24,16 @@ exports.answer=function(req, res){
 		res.render('quizes/answer', { quiz: req.quiz, respuesta: resultado });
 	
 };
+exports.search=function(req, res){
+//if(req.search != null){
+	console.log(req.search);
+	console.log(search);
+	console.log("------------------------------------------------------------------------------------------------------------");
+	models.Quiz.findAll({where: ["pregunta like ?", req.search]}).then(function(quizes){
+	res.render('quizes/index.ejs', { quizes: quizes});
+	}).catch(function(error){next(error);});
+//}
+};
 exports.index=function(req, res){
 	models.Quiz.findAll().then(function(quizes){
 	res.render('quizes/index.ejs', { quizes: quizes});
@@ -34,6 +44,16 @@ exports.author=function(req, res){
 	res.render('author.ejs', { creditos: "creditos de Marta y Luis"});
  
 };
+// exports.index=function(req, res){
+// 	models.Quiz.findAll().then(function(quizes){
+// 	res.render('quizes/index.ejs', { quizes: quizes});
+// }).catch(function(error){next(error);});
+// };
+// exports.author=function(req, res){
+	
+// 	res.render('author.ejs', { creditos: "creditos de Marta y Luis"});
+ 
+// };
 // exports.question=function(req, res){
 // 	models.Quiz.findAll().then(function(quiz){
 // 	res.render('quizes/question', {pregunta: quiz[0].pregunta});

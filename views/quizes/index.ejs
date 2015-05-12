@@ -1,6 +1,14 @@
+ <div> 
+  <form method="get" action="/quizes">
+    tipo de preguntas <p>
+    <input type="text" name="search" placeholder="Responda aquí"/>
+    <button type="submit" value ="Enviar">Enviar<buton>
+  </form>
+</div>
+
 <table>
        <% var i; for(i=0; i< quizes.length;i++){ %>
        <tr><td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td></tr>
        <% } %>
        
-      </table>
+</table>
